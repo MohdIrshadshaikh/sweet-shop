@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="icon" href="/img/logoTitle.png">
+  <script src="/javascripts/script.js" defer></script>
+  <script src="/javascripts/shop.js" async></script>
+  <title> shop | &nbsp;search!</title>
+  <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f0f0f0;
+    }
+
+    #search-bar {
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+.back{
+  margin-right: 10px;
+  margin-top: 15px;
+  font-size: 20px;
+}
+    #search-input {
+      width: 60%;
+      padding: 15px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 30px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    #search-input:focus {
+      border-color: #ff6347;
+      box-shadow: 0 0 10px rgba(255, 99, 71, 0.3);
+    }
+
+    /* Product Grid */
+    .section-p1 {
+      padding: 40px 20px;
+      background-color: #f5f5f5;
+    }
+
+    .pro-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .pro {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      width: 23%;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .pro:hover {
+      transform: scale(1.05);
+    }
+
+    .pro img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .des {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .star i {
+      color: #ffb400;
+      margin-bottom:10px ;
+    }
+
+    h4 {
+      color: #333;
+    }
+
+    /* No products message */
+    #no-products {
+      text-align: center;
+      font-size: 18px;
+      color: #666;
+      display: none;
+    }
+    h5{
+      font-size: 12px;
+      margin: 14px;
+    }
+    span{
+font-size: 12px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .pro {
+        width: 48%;
+      }
+
+      #search-input {
+        width: 80%;
+        font-size: 10px;
+      }
+      h4 {
+      color: #333;
+      margin: 16.8px;
+    }
+    .back{
+
+font-size: 16px;
+}
+    }
+    @media (max-width: 539px) {
+      .pro {
+        width: 42%;
+      }
+      .star i {
+      color: #ffb400;
+      display: none;
+    }
+    span{
+      display: none
+    }
+    .pro img{
+  border-radius: 0px;
+}
+.back{
+position: relative;
+top: 0px;
+font-size: 17px;
+}
+#search-input {
+        width: 80%;
+        font-size: 10px;
+      }
+    }
+    @media (max-width: 480px) {
+      .pro {
+        width: 41%;
+      }
+.pro img{
+  border-radius: 0px;
+}
+      #search-input {
+        width: 90%;
+        font-size: 10px;
+      }
+      .back{
+position: relative;
+font-size: 19px;
+top: 0px;
+}
+    }
+
+    @media (max-width: 404px) {
+      .pro {
+        width: 28%;
+      }
+      #search-input {
+        width: 90%;
+        font-size: 10px;
+      }
+      h5{
+        font-size: 8px;
+      }
+      h4{
+        font-size: 12px;
+      }
+      .back{
+
+font-size: 18px;
+}
+    }
+    @media (max-width: 358px) {
+      .pro {
+        width: 39%;
+      }
+      .back{
+
+font-size: 17px;
+}
+    }
+    @media (max-width: 292px) {
+      .pro {
+        width: 44%;
+      }
+      #search-input {
+        width: 80%;
+        font-size: 8px;
+      }
+      .back{
+
+  font-size: 15px;
+}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Search Input -->
+  <div id="search-bar">
+    <div class="back">
+      <a href="/index"><i class="ri-arrow-left-line searchback"></i></a>
+
+    </div>
+    <input type="text" id="search-input" placeholder="Search for products...">
+  </div>
+
+  
+  <!-- No products message -->
+  <div id="no-products">No products yet</div>
+
+  <section id="product1" class="section-p1">
+
+    <div class="pro-container">
+
+      <div class="pro tshirt">
+        <img src="/img/urbanic_img/tshirt/cake0.jpeg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>choclate cake </h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 300</h4>
+        </div>
+      </div>
+      <div class="pro sweet">
+        <img src="/img/urbanic_img/sunflower/soanpapde0.webp" alt="" />
+        <div class="des">
+          <span>haldilam</span>
+          <h5>soan papdi</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 499</h4>
+        </div>
+      </div>
+      <div class="pro dress">
+        <img src="/img/urbanic_img/floral/jalabe0.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>imlete jalabe</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 150 (1kg)</h4>
+        </div>
+      </div>
+      <div class="pro heels">
+        <img src="/img/urbanic_img/heels/cupcake0.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Brown choclate cup cake</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 199</h4>
+        </div>
+      </div>
+
+      <div class="pro jeans">
+        <img src="/img/urbanic_img/jeans/ladoo0.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Bondi ladoo</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 389</h4>
+        </div>
+      </div>
+
+      <div class="pro tshirt">
+        <img src="/img/urbanic_img/tshirt/cake1.jpg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>brown stabeary cake</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 459</h4>
+        </div>
+      </div>
+      <div class="pro dress">
+        <img src="/img/urbanic_img/floral/jalabe1.jpg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>jalabe</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 199</h4>
+        </div>
+      </div>
+      <div class="pro jeans">
+        <img src="/img/urbanic_img/jeans/ladoo1.jpeg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>ladoo</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 399</h4>
+        </div>
+      </div>
+
+
+
+
+      <div class="pro handbag">
+        <img src="/img/urbanic_img/handbags/rasgulla0.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Kesar Gulab Jamun (buy 1 / 2 Free)</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 860</h4>
+        </div>
+      </div>
+      <div class="pro heels">
+        <img src="/img/urbanic_img/heels/cupcake1.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>cup cake</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 899</h4>
+        </div>
+      </div>
+
+      <div class="pro tshirt">
+        <img src="/img/urbanic_img/tshirt/cake2.jpeg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>craem cake </h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 599</h4>
+        </div>
+      </div>
+      <div class="pro handbag">
+        <img src="/img/urbanic_img/handbags/rasgulla1.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>white/brown rasgulla</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 899</h4>
+        </div>
+      </div>
+      <div class="pro lipstick">
+        <img src="/img/urbanic_img/lipstick/kajukatre0.webp" alt="" />
+        <div class="des">
+          <span>ovlin</span>
+          <h5>Kaju Katli (1 pac)</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 599</h4>
+        </div>
+      </div>
+
+      <div class="pro tshirt">
+        <img src="/img/urbanic_img/tshirt/cake3.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Brown Velevt Cake</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 999</h4>
+        </div>
+      </div>
+      <div class="pro lipstick">
+        <img src="/img/urbanic_img/lipstick/kajukatre1.jpg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>kaju katre</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 799</h4>
+        </div>
+      </div>
+      <div class="pro tshirt">
+        <img src="/img/urbanic_img/tshirt/cake4.jfif" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Milk cake</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 729</h4>
+        </div>
+      </div>
+
+      <div class="pro jeans">
+        <img src="/img/urbanic_img/jeans/ladoo2.jpg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>basan ladoo</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 209</h4>
+        </div>
+      </div>
+
+      <div class="pro handbag">
+        <img src="/img/urbanic_img/handbags/rasgulla2.webp" alt="" />
+        <div class="des">
+          <span>haldiram</span>
+          <h5>White rasgulla</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 609</h4>
+        </div>
+      </div>
+      <div class="pro lipstick">
+        <img src="/img/urbanic_img/lipstick/kajukatre2.jfif" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>yellow kaju Katli</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 559</h4>
+        </div>
+      </div>
+
+      <div class="pro heels">
+        <img src="/img/urbanic_img/heels/cupcake2.jpg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Brown cream cupcake</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 199</h4>
+        </div>
+      </div>
+      <div class="pro dress">
+        <img src="/img/urbanic_img/floral/jalabe2.jpg" alt="" />
+        <div class="des">
+          <span>  </span>
+          <h5>green jalabe</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 489</h4>
+        </div>
+      </div>
+
+
+      <div class="pro tshirt">
+        <img src="/img/urbanic_img/tshirt/cake5.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Milk cake</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 559</h4>
+        </div>
+      </div>
+      <div class="pro heels">
+        <img src="/img/urbanic_img/heels/cupcake03.jpg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>cream cupcake</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 99</h4>
+        </div>
+      </div>
+      <div class="pro tshirt">
+        <img src="/img/urbanic_img/tshirt/cake6.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>pink cake</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 699</h4>
+        </div>
+
+      </div>
+      <div class="pro sweet">
+        <img src="/img/urbanic_img/sunflower/soanpapde3.jpg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>soan papdi</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 609</h4>
+        </div>
+
+      </div>
+
+
+      <div class="pro handbag">
+        <img src="/img/urbanic_img/handbags/rasgulla4.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Matka rasgulla</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 569</h4>
+        </div>
+
+      </div>
+
+      <div class="pro tshirt">
+        <img src="/img/urbanic_img/tshirt/cake7.jpg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Pink Icecram cake</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 399</h4>
+        </div>
+      </div>
+      <div class="pro sweet">
+        <img src="/img/urbanic_img/sunflower/soanpapde2.jpg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>soan papdi</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 179</h4>
+        </div>
+      </div>
+      <div class="pro jeans">
+        <img src="/img/urbanic_img/jeans/ladoo3.jpg" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>rawa ladoo</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 299</h4>
+        </div>
+      </div>
+
+      <div class="pro dress">
+        <img src="../img/urbanic_img/floral/jalabe7.jfif" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>jalabe</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 189</h4>
+        </div>
+      </div>
+      <div class="pro lipstick">
+        <img src="/img/urbanic_img/lipstick/kajukatre3.webp" alt="" />
+        <div class="des">
+          <span>haldiram</span>
+          <h5>kaju katre</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 699</h4>
+        </div>
+      </div>
+      <div class="pro sweet">
+        <img src="/img/urbanic_img/sunflower/soanpapde1.webp" alt="" />
+        <div class="des">
+          <span>Bikno</span>
+          <h5>soan papdi</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 699</h4>
+        </div>
+        <!-- <i class="fa fa-shopping-cart cart"></i> -->
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <!-- JavaScript to handle the search functionality -->
+  <script>
+    // On page load, hide all products and show "No products yet"
+    window.onload = function () {
+      const products = document.querySelectorAll(".pro");
+      products.forEach(function (product) {
+        product.style.display = "none"; // Hide all products
+      });
+      document.getElementById("no-products").style.display = "block"; // Show "No products yet" message
+    };
+  
+    // Search functionality
+    document.getElementById("search-input").addEventListener("input", function () {
+      const searchQuery = this.value.toLowerCase();
+      const products = document.querySelectorAll(".pro");
+  
+      if (searchQuery === "") {
+        products.forEach(function (product) {
+          product.style.display = "none"; // Hide all products
+        });
+        document.getElementById("no-products").style.display = "block"; // Show "No products yet" message
+      } else {
+        let hasResults = false;
+        products.forEach(function (product) {
+          const productName = product.querySelector("h5").textContent.toLowerCase();
+          if (productName.includes(searchQuery)) {
+            product.style.display = "block"; // Show matching products
+            hasResults = true;
+          } else {
+            product.style.display = "none"; // Hide non-matching products
+          }
+        });
+  
+        // Toggle "No products yet" message based on results
+        document.getElementById("no-products").style.display = hasResults ? "none" : "block";
+      }
+    });
+  </script>
+  
+  
+
+</body>
+</html>

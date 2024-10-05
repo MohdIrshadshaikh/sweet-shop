@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="icon" href="/img/logoTitle.png">
+  <script src="/javascripts/script.js" defer></script>
+  <script src="/javascripts/shop.js" async></script>
+  <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+  <title> shop | &nbsp;Welcome to sweet shop!</title>
+</head>
+
+<body>
+  <style>
+    .search input {
+      background: transparent;
+      font-size: 14px;
+      padding: 4px;
+      width: 220px;
+      height: 26px;
+      border-bottom: 2px solid black;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+
+
+      font-weight: 600;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
+
+    .hidden {
+      display: none;
+      /* Fade out effect */
+      pointer-events: none;
+
+
+      /* Prevent interaction with hidden items */
+    }
+
+    /* swipper */
+      body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.swiper-container {
+  position: relative;
+  width: 100%;
+  height: 63vh;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  /* white-space: nowrap; */
+}
+
+.swiper-slide {
+  min-width: 100%;
+  height: 80%;
+  display: flex;
+  box-sizing: border-box;
+}
+
+
+
+
+
+.swiper-slide img {
+  height: 57vh;
+  width: 100vw;
+  object-fit: cover;
+}
+
+
+
+
+
+
+.swiper-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 24px;
+}
+
+.prev-button {
+  top: 40%;
+  left: 10px;
+  font-size: 14px;
+  background-color: transparent;
+  color: black;
+}
+
+.next-button {
+  right: 10px;
+  top: 40%;
+  font-size: 14px;
+  background-color: transparent;
+  color: black;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Responsive Design for swipper */
+
+@media (max-width: 768px) {
+    .swiper-container {
+        height: 50vh; /* Adjust height for smaller devices */
+    }
+
+    .swiper-slide img {
+        height: auto; /* Adjust height to auto */
+    }
+
+    .swiper-button {
+        font-size: 18px; /* Smaller button size */
+        padding: 5px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper-container {
+        height: 40vh; /* Further adjust height for mobile */
+    }
+
+    .swiper-button {
+        font-size: 16px; /* Smaller button size */
+        padding: 4px; /* Adjust padding */
+    }
+}
+.search{
+   font-weight: 900;
+   padding: 10px;
+ 
+  }
+  </style>
+
+
+
+  <!-- NAVBAR -->
+  <section id="header">
+    <a href="#"><img src="/img/weblogo.png" alt="" /></a>
+
+    <div>
+      <ul id="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a class="active" href="/shop">Shop</a></li>
+        <!-- <li><a href="/about">About</a></li> -->
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/login">Login</a></li>
+        
+
+        <li id="lg-bag">
+          <a href="/search"><i class="ri-search-line search"></i></a>
+          <a href="/cart"><i class="fa-solid fa-shopping-bag"></i></a>
+
+        </li>
+        <a href="#" id="close"><i class="fa fa-times"></i></a>
+      </ul>
+    </div>
+    <div id="mobile">
+      <a href="/cart"><i class="fa-solid fa-shopping-bag"></i></a>
+      <a href="/search"><i class="ri-search-line search"></i></a>
+
+      
+      <i id="bar" class="fas fa-outdent"></i>
+    </div>
+  </section>
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="../img/banner004.jfif" alt=""></div>
+      <div class="swiper-slide"><img src="../img/banner003.jfif" alt=""></div>
+      <div class="swiper-slide"><img src="../img/banner006.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="../img/banner002.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="../img/banner007.jpg" alt=""></div>
+    </div>
+    <button class="swiper-button prev-button"><i class="fas fa-chevron-left"></i></button>
+    <button class="swiper-button next-button"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+
+  <!-- Hero -->
+  <!-- <section id="hero">
+    <div class="black">
+      <h4>Trade-in-offer</h4>
+      <h2 class="sweetname">Super Sweet deals</h2>
+      <h1 class="onallpro">On all products</h1>
+      <p class="savemore">Save more with coupons</p>
+      <button onclick="location.href='shop.html';">Shop Now</button>
+
+    </div>
+  </section> -->
+
+  <!-- Feature -->
+  <section id="feature" class="section-p1">
+    <div class="fe-box">
+      <img src="/img/features/f1.png" alt="" />
+      <h6>Free Shipping</h6>
+    </div>
+    <div class="fe-box">
+      <img src="/img/features/f2.png" alt="" />
+      <h6>Online Order</h6>
+    </div>
+    <div class="fe-box">
+      <img src="/img/features/f3.png" alt="" />
+      <h6>Save Money</h6>
+    </div>
+
+    <div class="fe-box">
+      <img src="/img/features/f6.png" alt="" />
+      <h6>24/7 Support</h6>
+    </div>
+  </section>
+
+  <!-- Featured products -->
+
+  <section id="product1" class="section-p1">
+    <h2 class="feau">Product</h2>
+    <p>All Sweet's Are In Demand</p>
+    <div class="pro-container">
+
+      <div class="pro">
+        <img src="/img/urbanic_img/jeans/ladoo5.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Mothichoor ladoo (1kg)</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+           
+          </div>
+          <h4>₹ 300</h4>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="/img/products/kajukatre0.webp" alt="" />
+        <div class="des">
+          <span>ovlin</span>
+          <h5>Kaju Katli (1 pac)</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+
+          </div>
+          <h4>₹ 599</h4>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="/img/urbanic_img/tshirt/cake3.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Brown Velevt Cake </h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+
+          </div>
+          <h4>₹ 999</h4>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="/img/products/ladoo0.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Boobdi Laddu (1/2 kg)</h5>
+          <div class="star">
+            <i class="fas fa-star stati"></i>
+            <i class="fas fa-star stari "></i>
+            <i class="fas fa-star stari"></i>
+            <i class="fas fa-star stari"></i>
+            <i class="fas fa-star stari"></i>
+          </div>
+          <h4>₹ 160</h4>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="/img/urbanic_img/lipstick/kajukatre5.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Pink Kaju Katli </h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 499</h4>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="/img/products/rasgulla0.webp" alt="" />
+        <div class="des">
+          <span>Yuvraj</span>
+          <h5>Kesar Gulab Jamun (buy 1 / 2 Free) </h5>
+          <div class="star">
+         
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 860</h4>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="/img/products/cupcake0.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Brown choclate cup cake</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 199</h4>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="/img/products/milkcake.webp" alt="" />
+        <div class="des">
+          <span>lynk</span>
+          <h5>Milkcake</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 600</h4>
+        </div>
+      </div>
+
+      <div class="pro">
+        <img src="/img/urbanic_img/floral/jalabe6.jfif" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>Kheel jalabe</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 689</h4>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="/img/urbanic_img/handbags/rasgulla8.jfif" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>rasgulla</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 400</h4>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="/img/urbanic_img/jeans/ladoo9.webp" alt="" />
+        <div class="des">
+          <span>Singlas</span>
+          <h5>ladoo (1kg)</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>₹ 900</h4>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="/img/urbanic_img/lipstick/kajukatre6.webp" alt="" />
+        <div class="des">
+          <span></span>
+          <h5>kaju Katli</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          
+          </div>
+          <h4>₹ 200</h4>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Offer Banner -->
+  <section id="banner" class="section-m1">
+    <h4>Latest Offer</h4>
+    <h2>Upto <span>70% Off</span> All Sweet's & Cake</h2>
+    <button class="normal" onclick="location.href='/shop';">Explore Now</button>
+  </section>
+
+
+  <!-- New Arrivals -->
+
+
+  <!-- SM banner -->
+
+  <section id="sm-banner" class="section-p1">
+    <div class="banner-box banner-box-1">
+      <h4>Super deals</h4>
+      <h2>Buy 1 Get 2 Free</h2>
+      <span>The best sweet is on sale</span>
+      <button class="white" onclick="location.href='/shop';">Learn more</button>
+    </div>
+    <div class="banner-box banner-box-2">
+      <h4>Diwali Special</h4>
+      <h2>upcoming season</h2>
+      <span>The best sweet is on sale</span>
+      <button class="white" onclick="location.href='/shop';">Collection</button>
+    </div>
+  </section>
+
+  <!-- banner3 -->
+  <section id="banner-3">
+    <div class="banner-box banner-box-1">
+      <h2>SEASONAL SALE</h2>
+      <h3>Winter Collection 50% OFF</h3>
+    </div>
+    <div class="banner-box banner-box-2">
+      <h2>NEW SWEET COLLECTION</h2>
+      <h3>Sweet / Summer 2022</h3>
+    </div>
+    <div class="banner-box banner-box-3">
+      <h2>DIWALI</h2>
+      <h3>New Trendy sweet</h3>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+
+
+
+  <!-- Footer -->
+  <footer class="section-p1">
+    <div class="col">
+      <img class="logo" src="/img/weblogo.png" alt="logo" />
+      <h4>Contact</h4>
+      <p><b>Address:</b> Ghatoper (E), Mumbai,Maharashtra</p>
+      <p><b>Phone:</b>(+91) 9004606238</p>
+
+      <div class="follow">
+        <h4>Follow On Social Media</h4>
+        <div class="icon">
+          <i class="fab fa-linkedin" style="font-size:18px"
+            onclick="window.location.href='www.linkedin.com/in/mihir2403';"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-pinterest-p"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>About</h4>
+      <a href="/about">About us</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="/contact">Contact us</a>
+    </div>
+    <div class="col">
+      <h4>My Account</h4>
+      <a href="#">Sign In</a>
+      <a href="/cart">View Cart</a>
+      <a href="#">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="/about">Help</a>
+    </div>
+    <div class="col install">
+
+      <p>Secured Payment Gateway</p>
+      <img src="img/pay/pay.png" alt="" />
+    </div>
+    <div class="copyright">
+
+    </div>
+  </footer>
+  <script>
+    
+
+
+    // swipper
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const swiperWrapper = document.querySelector('.swiper-wrapper');
+      const slides = document.querySelectorAll('.swiper-slide');
+      const slideCount = slides.length;
+      let index = 0;
+
+      function updateSlidePosition() {
+        const slideWidth = slides[0].offsetWidth;
+        swiperWrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+      }
+
+      // Next button functionality
+      document.querySelector('.next-button').addEventListener('click', () => {
+        index = (index + 1) % slideCount;
+        updateSlidePosition();
+      });
+
+      // Prev button functionality
+      document.querySelector('.prev-button').addEventListener('click', () => {
+        index = (index - 1 + slideCount) % slideCount;
+        updateSlidePosition();
+      });
+
+      // Handle window resize to keep the slide width correct
+      window.addEventListener('resize', updateSlidePosition);
+
+      // Auto-slide every 3 seconds
+      setInterval(() => {
+        index = (index + 1) % slideCount;
+        updateSlidePosition();
+      }, 3000);
+    });
+
+
+  // Make sure the script runs after the page content is loaded
+
+
+  </script>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+</body>
+
+</html>

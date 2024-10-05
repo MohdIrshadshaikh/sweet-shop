@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="icon" href="/img/logoTitle.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <script src="/javascripts/script.js" defer></script>
+  <title> shop | &nbsp;Contact</title>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <section id="header">
+    <a href="#"><img src="/img/weblogo.png" alt="" /></a>
+
+    <div>
+      <ul id="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/shop">Shop</a></li>
+        <li><a class="active" href="/contact">Contact</a></li>
+        <li><a href="/login">Login</a></li>
+        <li id="lg-bag">
+          <a href="/cart"><i class="fa-solid fa-shopping-bag"></i></a>
+        </li>
+        <a href="#" id="close"><i class="fa fa-times"></i></a>
+      </ul>
+    </div>
+    <div id="mobile">
+      <a href="cart.html"><i class="fa-solid fa-shopping-bag"></i></a>
+      <i id="bar" class="fas fa-outdent"></i>
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section id="page-header" class="about-header"
+    style="background-image: url('/img/banner/contact.jpg');background-position: center;">
+
+    <h2 class="tak">Lets - talk </h2>
+
+    <p>Leave a message. </p>
+
+  </section>
+
+  <!--  contact details-->
+  <section id="contact-details" class="section-p1">
+    <div class="details">
+      <span>GET IN TOUCH</span>
+      <h2>Visit one if our agency locations or contact us today</h2>
+      <h3>Head Office</h3>
+      <div>
+        <li>
+          <i class="far fa-map"></i>
+          <p>Ghatoper(E), Mumbai, Maharashtra</p>
+        </li>
+        <li>
+          <i class="far fa-envelope"></i>
+          <p>mohdirshadshaikh1234@gmail.com</p>
+        </li>
+        <li>
+          <i class="fas fa-phone"></i>
+          <p>www.linkedin.com/in/mohdirshadshaikh</p>
+        </li>
+        <li>
+          <i class="far fa-clock"></i>
+          <p>Monday to Saturday: 10:00am - 9:00pm</p>
+        </li>
+      </div>
+
+    </div>
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.4755148773884!2d72.90548997348208!3d19.08678425163727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c62d218e1d23%3A0x4ab93892dc0dfac9!2sGhatkopar%20Metro%20Station!5e0!3m2!1sen!2sin!4v1725875755623!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+  </section>
+
+  <!-- Form details -->
+
+  <section id="form-details">
+    <form id="contactForm">
+      <span>LEAVE A MESSAGE</span>
+      <h2>We would love to hear from you!</h2>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="E-Mail" required>
+      <input type="text" name="subject" placeholder="phone nuber" required>
+      <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+      <button class="normal" type="submit">Submit</button>
+    </form>
+  
+    <!-- Display saved messages -->
+    <div class="messages-box">
+      <h3> Message</h3>
+      <ul id="messagesList">
+        <% messages.forEach((msg) => { %>
+          <li>
+            <strong>Name:</strong> <%= msg.name %> <br>
+            <strong>Email:</strong> <%= msg.email %> <br>
+            <strong>phone number:</strong> <%= msg.subject %> <br>
+            <strong>Message:</strong> <%= msg.message %> <br>
+            <button class="delete-btn">Delete</button>
+            <hr>
+          </li>
+        <% }) %>
+      </ul>
+      <button id="showMoreBtn">Show More</button>
+    </div>
+  </section>
+  
+
+
+  <!-- Newsletter -->
+
+
+
+  <!-- Footer -->
+  <footer class="section-p1">
+    <div class="col">
+      <img class="logo" src="/img/weblogo.png" alt="logo" />
+      <h4>Contact</h4>
+      <p><b>Address:</b> Ghatoper (E), Mumbai,Maharashtra</p>
+      <p><b>Phone:</b>(+91) 9004606238</p>
+
+      <div class="follow">
+        <h4>Follow On Social Media</h4>
+        <div class="icon">
+          <i class="fab fa-linkedin" style="font-size:18px"
+            onclick="window.location.href='www.linkedin.com/in/mihir2403';"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-pinterest-p"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>About</h4>
+      <a href="/about">About us</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="/contact">Contact us</a>
+    </div>
+    <div class="col">
+      <h4>My Account</h4>
+      <a href="#">Sign In</a>
+      <a href="/cart">View Cart</a>
+      <a href="#">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="/about">Help</a>
+    </div>
+    <div class="col install">
+
+      <p>Secured Payment Gateway</p>
+      <img src="img/pay/pay.png" alt="" />
+    </div>
+    <div class="copyright">
+
+    </div>
+  </footer>
+  <script>
+const form = document.getElementById('contactForm');
+const messagesList = document.getElementById('messagesList');
+const showMoreBtn = document.getElementById('showMoreBtn');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault(); // Prevent page reload
+
+  // Collect form data
+  const formData = new FormData(form);
+  const data = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    subject: formData.get('subject'),
+    message: formData.get('message'),
+  };
+
+  // Simulate an AJAX request
+  const response = await fetch('/submit-form', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+
+  const newMessage = await response.json();
+
+  // Add the new message to the message list dynamically
+  const newMessageElement = document.createElement('li');
+  newMessageElement.innerHTML = `
+    <strong>Name:</strong> ${newMessage.name} <br><br>  
+    <strong>Email:</strong> ${newMessage.email} <br> <br> 
+    <strong>Subject:</strong> ${newMessage.subject} <br> <br> 
+    <strong>Message:</strong> ${newMessage.message} <br> <br> 
+    <button class="delete-btn">Delete</button>
+   
+  `;
+  messagesList.appendChild(newMessageElement);
+
+  // Add delete event listener
+  addDeleteFunctionality(newMessageElement);
+
+  // Optionally, reset the form
+  form.reset();
+});
+
+// Function to handle delete button click
+const addDeleteFunctionality = (messageElement) => {
+  const deleteBtn = messageElement.querySelector('.delete-btn');
+  deleteBtn.addEventListener('click', () => {
+    // Remove the message from the view
+    messageElement.style.display = 'none';
+     messagesList.style.maxHeight = '450px';
+  });
+};
+
+// Apply delete functionality to existing messages
+document.querySelectorAll('#messagesList li').forEach(addDeleteFunctionality);
+
+// "Show More" button functionality
+let isExpanded = false;
+showMoreBtn.addEventListener('click', () => {
+  if (!isExpanded) {
+    // Expand the message list
+    messagesList.style.maxHeight = 'none';
+    showMoreBtn.textContent = 'Show Less';
+  } else {
+    // Collapse the message list
+    messagesList.style.maxHeight = '450px';
+    showMoreBtn.textContent = 'Show More';
+  }
+  isExpanded = !isExpanded;
+});
+
+
+  </script>
+</body>
+
+</html>
