@@ -1,6 +1,6 @@
 #product1 .pro {
   width: 19vw;
-  /* border: 2.1px dotted #7a3a3a; */
+ 
 
   min-width: 250px;
   padding: 10px 12px;
@@ -23,7 +23,7 @@
 
   #product1 .pro {
     width: 23%;
-    border: 2.1px dotted #7a3a3a;
+   
     min-width: 250px;
     padding: 10px 12px;
     border-radius: 25px;
@@ -115,7 +115,7 @@ display: none;
 
   #product1 .pro {
     width: 15%;
-    border: 1px solid #000000;
+ 
     min-width: 87px;
     padding: 5px 5px;
     border-radius: 0px;
@@ -157,7 +157,7 @@ display: none;
 
   #product1 .pro {
     width: 32%;
-    border: 1px solid #000000;
+   
     min-width: 96px;
     padding: 10px 12px;
     border-radius: 0px;
@@ -182,7 +182,7 @@ display: none;
 @media (max-width: 291px) {
   #product1 .pro {
     width: 60%;
-    border: 1px solid #000000;
+  
     min-width: 53px;
     padding: 10px 12px;
     border-radius: 0px;
