@@ -76,39 +76,23 @@ app.get('/thankyou.html', function (req, res) {
 //       res.status(500).send('Error deleting the message');
 //     }
 //   });
-  
-app.get('/next-page', (req, res) => {
-    const food = req.query.food;
-    const price = req.query.price;
-    const img = req.query.img;
 
-    // Render the next page with the selected food item, price, and image
-    res.render('next-page', { food, price, img });
-});
-
-app.get('/next-page1', (req, res) => {
-    const food = req.query.food;
-    const price = req.query.price;
-    const img = req.query.img;
-
-    // Render the next page with the selected food item, price, and image
-    res.render('next-page1', { food, price, img });
-});
 
 app.post("/pay", async function (req, res) {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
         const data = {
-            names: req.body.names,
-            passwords: hashedPassword,
-            emails: req.body.emails,
+            name: req.body.name,
+            password: hashedPassword,
+            email: req.body.email,
+           
         };
 
        
 
-        await paycollection.insertMany([data]);
+        await collection.insertMany([data]);
 
-        res.render("thankyou", { user: data });
+        res.render("index", { user: data });
     } catch (error) {
       
         res.status(500).send("Error registering user");
