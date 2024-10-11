@@ -21,10 +21,7 @@ const loginSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    profile:{
-        type:String,
-        default: "default.png"
-    }
+ 
    
 });
 
