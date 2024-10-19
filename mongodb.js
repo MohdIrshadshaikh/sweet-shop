@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGO_URI || "  mongodb://localhost:27017/loginpart")
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("mongo connect")
     })
